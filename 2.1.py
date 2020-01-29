@@ -1,10 +1,9 @@
 import random
 
-intlist=[random.randint(1,10000) for i in range (10)]
-print(intlist)
+intList = [random.randint(1, 10000) for i in range(10)]
 
-intlist.pop()
+print(intList)
 
-print(intlist)
+intList.pop()
 
-
+print(intList)
