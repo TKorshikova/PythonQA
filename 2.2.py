@@ -1,17 +1,19 @@
 import random
 
-A=(random.randint(0,10))
-B=(random.randint(0,10))
-C=(random.randint(0,10))
+a = random.randint(0,10)
+b = random.randint(0,10)
+c = random.randint(0,10)
 
-if A>B:
+if a > b:
     print("Я обожаю Питон")
-elif A<B:
+elif a < b:
     print("Я ненавижу Питон")
-else: print (C,"Теперь эта")
-if A + B < C:
+else:
+    print(c, "Теперь эта")
+
+if a + b < c:
     print("Какое счастье!")
-elif A + B > C:
+elif a + b > c:
     print("Какая печаль!")
 else:
     print("Страдание")
