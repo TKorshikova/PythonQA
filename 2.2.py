@@ -11,9 +11,9 @@ elif a < b:
 else:
     print(c, "Теперь эта")
 
-if a + b < c:
-    print("Какое счастье!")
-elif a + b > c:
-    print("Какая печаль!")
-else:
-    print("Страдание")
+    if a + b < c:
+        print("Какое счастье!")
+    elif a + b > c:
+        print("Какая печаль!")
+    else:
+        print("Страдание")
