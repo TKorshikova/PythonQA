@@ -1,43 +1,40 @@
 import sqlite3
 
-# соединяемся с БД (если такой нет,она создается)
+# соединяемся с БД
 con = sqlite3.connect("vetPatients_base.db")
 # создаем объект курсора
 cur = con.cursor()
 
 # создаем таблицу 1
-cur.execute("""
-CREATE TABLE pets
-    (
-        id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-        name VARCHAR,
-        species VARCHAR,
-        breed VARCHAR,
-        sex CHAR(1),
-        birth_date DATE,
-        owner_id INTEGER,
-        nursery_id INTEGER,
-        FOREIGN KEY (owner_id) REFERENCES owners(id),
-        FOREIGN KEY (nursery_id) REFERENCES nurseries(id)
-    )
+cur.execute("""CREATE TABLE pets
+(
+    id         INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    name       VARCHAR,
+    species    VARCHAR,
+    breed      VARCHAR,
+    sex        CHAR(1),
+    birth_date DATE,
+    owner_id   INTEGER,
+    nursery_id INTEGER,
+    FOREIGN KEY (owner_id) REFERENCES owners (id),
+    FOREIGN KEY (nursery_id) REFERENCES nurseries (id)
+)
 """)
 # таблица 2
-cur.execute("""
-CREATE TABLE owners
-    (
-        id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-        name VARCHAR,
-        phone_number VARCHAR
-    )
+cur.execute("""CREATE TABLE owners
+(
+    id           INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    name         VARCHAR,
+    phone_number VARCHAR
+)
 """)
 # таблица 3
-cur.execute("""
-CREATE TABLE nurseries
-    (
-        id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-        name VARCHAR,
-        phone_number VARCHAR
-    )
+cur.execute("""CREATE TABLE nurseries
+(
+    id           INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    name         VARCHAR,
+    phone_number VARCHAR
+)
 """)
 # вводим данные
 cur.execute('INSERT INTO pets VALUES(1, "Tuzik", "dog", "Pug", "m", "2010.02.11", 1, 2)')
